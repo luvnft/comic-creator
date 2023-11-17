@@ -1,10 +1,11 @@
 import './App.css';
 import Comic from './components/Comic';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App bg-red-300">
-      Hello
+    <div className="App bg-[#f4f5f8] h-screen">
+      <Navbar />
       <Comic />
     </div>
   );
