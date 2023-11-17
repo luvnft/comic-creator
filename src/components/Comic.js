@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ComicSlide from './ComicSlide';
+import toast from 'react-hot-toast';
 
 const Comic = () => {
     const [images, setImages] = useState([{ caption: "", image: "", text: "" }, { caption: "", image: "", text: "" }, { caption: "", image: "", text: "" }, { caption: "", image: "", text: "" }, { caption: "", image: "", text: "" }, { caption: "", image: "", text: "" }, { caption: "", image: "", text: "" }, { caption: "", image: "", text: "" }, { caption: "", image: "", text: "" }, { caption: "", image: "", text: "" }]);
@@ -11,6 +12,7 @@ const Comic = () => {
             inputs: inputText
         };
 
+        const loadingToast = toast.loading('Loading...');
         setLoading(true);
         try {
 
@@ -27,8 +29,11 @@ const Comic = () => {
                 }
             );
             const result = await response.blob();
+            toast.dismiss(loadingToast);
+            toast.success("Image added");
             return result;
         } catch (error) {
+            toast.error("Please try again later");
             console.log(error);
         } finally {
             setLoading(false);
@@ -67,13 +72,14 @@ const Comic = () => {
             <div className='mb-6 flex justify-center items-center'>
                 <form className='flex gap-4 justify-center items-center w-9/12 max-w-4xl flex-col sm:flex-row'>
                     <input type="text" className="w-full sm:w-7/12 px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" value={text} onChange={(e) => setText(e.target.value)} />
-                    <button disabled={text.length === 0} className='bg-sky-500 disabled:bg-sky-00 text-white text-sm font-medium px-4 py-2 rounded' onClick={handleClickAddImage}>Add image</button>
+                    <button disabled={text.length === 0 || loading} className='bg-sky-500 disabled:bg-sky-00 text-white text-sm font-medium px-4 py-2 rounded flex justify-center items-center' onClick={handleClickAddImage}>
+                        <span>
+                            Add image
+                        </span>
+                    </button>
                 </form>
-                {loading && <div>
-                    Loading
-                </div>}
             </div>
-            <div className='text-center'>Click on an image to add text annotations</div>
+            <div className='text-center mb-6'>Click on an image to add text annotations</div>
             <div className="flex flex-wrap font-['Comic_Sans',cursive]">
                 {images.map((img, index) => (
                     <ComicSlide data={img} index={index} images={images} setImages={setImages} large={index === 0 || index === 3 || index === 4 || index === 6} key={index} />
