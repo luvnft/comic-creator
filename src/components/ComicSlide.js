@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { LuImageOff } from "react-icons/lu";
 
 const ComicSlide = (props) => {
     const { data, index, large } = props;
@@ -18,10 +19,18 @@ const ComicSlide = (props) => {
                 <></>
             }
             {open && <div className='absolute backdrop-brightness-50 w-full h-full flex justify-center items-center font-sans gap-2 flex-col'>
-                <input type="text" className="w-full sm:w-7/12 px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" value={text} onChange={(e) => setText(e.target.value)} />
+                <input type="text" className="w-10/12 max-w-xl px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" value={text} onChange={(e) => setText(e.target.value)} />
                 <button className='bg-sky-500 text-white text-sm font-medium px-4 py-2 rounded' onClick={() => setOpen(!open)}>Done</button>
             </div>}
-            {data.image && <img src={data.image} alt={data.caption} className='w-full min-h-full' onClick={() => setOpen(!open)} />}
+            {data.image
+                ?
+                <img src={data.image} alt={data.caption} className='w-full min-h-full' onClick={() => setOpen(!open)} />
+                :
+                <div className='font-sans text-gray-500 flex gap-2 justify-center items-center select-none'>
+                    This panel is blank
+                    <LuImageOff />
+                </div>
+            }
             {index === 9 && <p className='bg-white border-2 border-black m-0 px-2 py-1 absolute bottom-[-2px] right-[-6px] skew-x-[-15deg]'>THE END</p>}
         </div>
     )
