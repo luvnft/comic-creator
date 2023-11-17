@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App bg-[#f4f5f8] h-screen">
+    <div className="App bg-[#f4f5f8] min-h-screen">
       <Navbar />
       <Comic />
     </div>
