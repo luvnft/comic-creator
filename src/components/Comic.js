@@ -80,7 +80,7 @@ const Comic = () => {
                 </form>
             </div>
             <div className='text-center mb-6'>Click on an image to add text annotations</div>
-            <div className="flex flex-wrap font-['Comic_Sans',cursive]">
+            <div className="flex flex-wrap font-['Comic_Sans',cursive]" id='comic'>
                 {images.map((img, index) => (
                     <ComicSlide data={img} index={index} images={images} setImages={setImages} large={index === 0 || index === 3 || index === 4 || index === 6} key={index} />
                 ))}
