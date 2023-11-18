@@ -34,6 +34,7 @@ const SnapShot = () => {
 
     const handleClickDownload = () => {
         saveAs(snapshotUrl, 'comic_strip.png');
+        toast.success("Comic strip saved to device");
     };
 
     const handleShare = async () => {
@@ -45,7 +46,6 @@ const SnapShot = () => {
                 "cloud_name": "dmlsogftl"
             }
             const response = await axios.post('https://api.cloudinary.com/v1_1/dmlsogftl/image/upload', data);
-            console.log(response.data.url);
             setShareableLink(response.data.url);
         } catch (error) {
             toast.error("Unable to generate link. Please try again later.");
@@ -98,7 +98,10 @@ const SnapShot = () => {
                                     ?
                                     <span className='text-gray-400'>Generating...</span>
                                     :
-                                    <span className='text-sky-500 font-medium hover:text-sky-600 cursor-pointer' onClick={handleShare}>Generate link</span>
+                                    shareableLink ?
+                                        <span className='text-sky-500 font-medium'>Generate link</span>
+                                        :
+                                        <span className='text-sky-500 font-medium hover:text-sky-600 cursor-pointer' onClick={handleShare}>Generate link</span>
                             }
                         </div>
                         <input type="text" className="text-gray-600 w-full mb-2 px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none" disabled value={shareableLink} />
