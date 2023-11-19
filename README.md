@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# Comic Creator
+This repository contains an interactive Comic Creator application built using HTML, TailwindCSS, and React JS. This project allows users to effortlessly create, share, and download delightful 10-panel comic strips.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+1. **Text-to-Image API Integration:** Input text into a form and witness the magic as it's sent to a text-to-image API, transforming your words into vibrant comic strip panels.
+2. **10-Panel Comic Strip:** Create immersive stories by adding text to 10 images, crafting a complete and visually appealing comic strip.
+3. **Text Annotations:** Enhance your storytelling by adding text annotations directly onto the images, giving characters a voice or guiding the narrative.
+4. **Download and Share:** Download your comic strip for a personal keepsake or generate a unique shareable link to spread the joy with friends and followers online.
 
-## Available Scripts
+## Technologies Used
+- **ReactJS:** The frontend of the application is built using ReactJS, providing a dynamic and responsive user interface.
+- **Tailwind CSS:** The styling is crafted with Tailwind CSS, enabling easy customization and a clean, modern design.
+- **React Hot Toast:** Toast notifications are implemented using React Hot Toast, enhancing user feedback for various actions.
+- **Cloudinary:** Upload and store the generated comics online using Cloudinary, ensuring seamless accessibility and sharing.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshots
+#### Website
+![Website](https://dib-aws-bucket.s3.ap-south-1.amazonaws.com/comic-creator-1.png)
+#### After adding images
+![After adding images](https://dib-aws-bucket.s3.ap-south-1.amazonaws.com/comic-creator-2.png)
+#### Share and download feature
+![Share and download feature](https://dib-aws-bucket.s3.ap-south-1.amazonaws.com/comic-creator-3.png)
+#### Generated comic
+![Generated comic](https://dib-aws-bucket.s3.ap-south-1.amazonaws.com/comic_strip_compressed.png)
