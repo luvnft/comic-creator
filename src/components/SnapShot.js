@@ -86,7 +86,7 @@ const SnapShot = () => {
                 <div className='absolute left-[5%] right-[5%] w-[90%] sm:w-96 bg-white rounded-md shadow-lg z-10 top-16 sm:right-10 sm:left-auto border' ref={modalEl}>
                     <div className='flex justify-between items-center p-5 border-b'>
                         <span className='text-gray-800 font-semibold'>
-                            Share this comic
+                            Share this comAIc
                         </span>
                         <AiOutlineClose className='text-gray-400 cursor-pointer' onClick={handleClick} />
                     </div>
